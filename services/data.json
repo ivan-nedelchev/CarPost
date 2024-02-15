@@ -1,8 +1,8 @@
 {
-    "asdf123123" : {
-        "name" : "BMW M4 2018",
-        "description" : "50000 km. Recent maintenance, everything works.",
-        "imgUrl" : "https://www.auto-data.net/images/f103/BMW-M4-F82.jpg",
-        "price" : 90000
+    "429fb31d-445c": {
+        "name": "test",
+        "description": "test",
+        "imgUrl": "BMW-M4-F82.jpg",
+        "price": 121111
     }
 }
