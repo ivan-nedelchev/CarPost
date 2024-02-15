@@ -1,0 +1,24 @@
+{
+  "name": "carpost",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivan-nedelchev/CarPost.git"
+  },
+  "keywords": [],
+  "author": "IN",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ivan-nedelchev/CarPost/issues"
+  },
+  "homepage": "https://github.com/ivan-nedelchev/CarPost#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2"
+  }
+}
