@@ -20,6 +20,7 @@ img.cube {
     display: block;
     margin: 0 auto;
     text-align: center;
+    height: 150px
 }
 
 img.logo {
@@ -74,6 +75,7 @@ div.cube {
     border: 1px solid #2b415433;
     background: white;
     vertical-align: top;
+    width: 250px;
 }
 
 div.cube:hover p.name {
@@ -88,6 +90,7 @@ p.name {
     text-transform: uppercase;
     padding: 10px;
     border-bottom: 1px solid #2b415433;
+    height: 60px;
 }
 
 button, main a.btn {
@@ -259,4 +262,11 @@ footer {
     to {
         opacity: 0;
     }
+}
+.description {
+    display: none;
+}
+
+.description p {
+    margin: 10px;
 }

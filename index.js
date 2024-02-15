@@ -7,8 +7,8 @@
 // - [x] read all
 // - [x] read one by ID 
 // - [x] create
-// - [ ] edit
-// - [ ] delete 
+// - [x] edit
+// - [x] delete 
 // - [x] search
 
 //implement controllers
@@ -16,7 +16,10 @@
 // - [x] about
 // - [x] details
 // - [x] create
-// - [x] improved home page (search)
+// - [x] improve home page (search)
+// - [x] edit
+// - [x] delete
+// - [x] add front-end code
 
 const express = require('express');
 const hbs = require('express-handlebars');
@@ -28,6 +31,9 @@ const { about } = require('./controllers/about');
 const create = require('./controllers/create');
 const { details } = require('./controllers/details');
 const { notFound } = require('./controllers/notFound');
+const deleteCar = require('./controllers/delete')
+const edit = require('./controllers/edit')
+
 
 const app = express();
 
@@ -38,7 +44,7 @@ app.set('view engine', 'hbs');
 
 app.use(express.urlencoded({extended : true}));
 app.use('/static', express.static('static'));
-app.use(carsService())
+app.use(carsService());
 
 app.get('/', home);
 app.get('/about', about);
@@ -47,6 +53,14 @@ app.get('/details/:id', details);
 app.route('/create')
     .get(create.get)
     .post(create.post);
+
+app.route('/delete/:id')
+    .get(deleteCar.get)
+    .post(deleteCar.post);
+
+app.route('/edit/:id')
+    .get(edit.get)
+    .post(edit.post);
 
 app.all('*', notFound);
 

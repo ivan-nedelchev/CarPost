@@ -1,8 +1,14 @@
 {
-    "429fb31d-445c": {
-        "name": "test",
-        "description": "test",
-        "imgUrl": "BMW-M4-F82.jpg",
-        "price": 121111
-    }
+  "8f765712-33c5": {
+    "name": "BMW M4",
+    "description": "The best BMW ever - 2018 model",
+    "imgUrl": "BMW-M4-F82.jpg",
+    "price": 90000
+  },
+  "2224f6ed-0532": {
+    "name": "AUDI RS5",
+    "description": "the best car ever - 2022",
+    "imgUrl": "audi.jpg",
+    "price": 200000
+  }
 }
