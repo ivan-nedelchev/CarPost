@@ -10,9 +10,9 @@
 // - [x] edit
 // - [x] delete 
 // - [x] search
-// - [] accessory read
-// - [] accessory create
-// - [] attach accessory
+// - [X] accessory read
+// - [X] accessory create
+// - [X] attach accessory
 //implement controllers
 // - [x] home (catalog)
 // - [x] about
@@ -21,15 +21,15 @@
 // - [x] improve home page (search)
 // - [x] edit
 // - [x] delete
-// - [] create accessory
-// - [] attach accessory to car
-// - [] update details to include accessory
+// - [X] create accessory
+// - [X] attach accessory to car
+// - [X] update details to include accessory
 // - [x] add front-end code
 // - [X] add database connection
 // - [X] create Car model
 // - [X] upgrade car service to use Car model
-// - [] add validation rules to Car model
-// - [] create Accessory model
+// - [X] add validation rules to Car model
+// - [X] create Accessory model
 
 const express = require('express');
 const hbs = require('express-handlebars');
@@ -37,6 +37,8 @@ const hbs = require('express-handlebars');
 const initDb = require('./models/index');
 
 const carsService = require('./services/cars')
+const accessoryService = require('./services/accessory')
+
 
 const { home } = require('./controllers/home');
 const { about } = require('./controllers/about');
@@ -46,6 +48,8 @@ const deleteCar = require('./controllers/delete')
 const edit = require('./controllers/edit')
 
 const { notFound } = require('./controllers/notFound');
+const accessory = require('./controllers/accessory');
+const attach = require('./controllers/attach');
 
 start();
 
@@ -62,6 +66,7 @@ async function start() {
     app.use(express.urlencoded({ extended: true }));
     app.use('/static', express.static('static'));
     app.use(carsService());
+    app.use(accessoryService());
 
     app.get('/', home);
     app.get('/about', about);
@@ -70,6 +75,16 @@ async function start() {
     app.route('/create')
         .get(create.get)
         .post(create.post);
+
+    app.route('/create/accessory')
+        .get(accessory.get)
+        .post(accessory.post);
+
+    app.route('/attach/:id')
+        .get(attach.get)
+        .post(attach.post);
+
+
 
     app.route('/delete/:id')
         .get(deleteCar.get)
