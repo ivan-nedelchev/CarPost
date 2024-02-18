@@ -21,13 +21,14 @@
 // - [x] improve home page (search)
 // - [x] edit
 // - [x] delete
-// - [x] add front-end code
 // - [] create accessory
 // - [] attach accessory to car
 // - [] update details to include accessory
-// - [] add database connection
-// - [] create Car model
-// - [] upgrade car service to use Car model
+// - [x] add front-end code
+// - [X] add database connection
+// - [X] create Car model
+// - [X] upgrade car service to use Car model
+// - [] add validation rules to Car model
 // - [] create Accessory model
 
 const express = require('express');

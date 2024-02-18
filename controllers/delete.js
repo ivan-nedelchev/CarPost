@@ -14,6 +14,7 @@ module.exports = {
             await req.storage.deleteById(id)
             res.redirect('/');
         } catch (err) {
+            console.log(err);
             res.redirect('/404');
         }
     }
