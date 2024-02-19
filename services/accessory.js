@@ -1,14 +1,6 @@
 const Accessory = require("../models/Accessory");
+const { accessoryViewModel } = require("./util");
 
-function accessoryViewModel(accessory) {
-    return {
-        id: accessory._id,
-        name: accessory.name,
-        description: accessory.description,
-        imgUrl: accessory.imgUrl,
-        price: accessory.price,
-    }
-}
 
 async function createAccessory(accessory) {
     await Accessory.create(accessory)

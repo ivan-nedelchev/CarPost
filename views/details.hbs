@@ -12,11 +12,13 @@
       </div>
 {{/with}}
 
-{{#if accessories}}
+
 <h2>Accessories</h2>
-   {{#each accessories}}
+   {{#each car.accessories}}
     {{> accessory}}
 
     {{!-- TO DO --}}
+   {{else}}
+   <h3 class="italic">This vehicle has no accessories yet...</h3>
    {{/each}}
-{{/if}}
+

@@ -7,8 +7,11 @@ module.exports = {
                 req.storage.getById(id),
                 req.accessory.getAll()
             ]);
-            console.log(accessories);
-            res.render('attach', { title: "Attach Accessory", car, accessories})
+
+            const existingIds = car.accessories.map(a => a.id.toString())
+            const availableAccessories = accessories.filter(a => existingIds.includes(a.id.toString()) == false)
+
+            res.render('attach', { title: "Attach Accessory", car, accessories : availableAccessories})
         } catch (err) {
             console.log(err.message);
             res.redirect('404');
