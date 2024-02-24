@@ -93,7 +93,8 @@ p.name {
     height: 60px;
 }
 
-button, main a.btn {
+button,
+main a.btn {
     border: none;
     padding: 8px;
     text-align: center;
@@ -224,12 +225,12 @@ span.error {
     display: block;
 }
 
-img#sadFaceImg{
+img#sadFaceImg {
     display: block;
     margin: 0 auto;
 }
 
-h2{
+h2 {
     text-align: center;
 }
 
@@ -240,6 +241,7 @@ footer {
     color: white;
     font-size: 20px;
 }
+
 #notifications {
     margin: 0 auto;
     margin-top: 0px;
@@ -278,6 +280,7 @@ footer {
         opacity: 0;
     }
 }
+
 .description {
     display: none;
 }

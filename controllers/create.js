@@ -1,8 +1,7 @@
-const { mapError } = require("../services/util");
-
+const { mapError } = require('../services/util');
 module.exports = {
     get(req, res) {
-        res.render('create', { title: "Create Listing" })
+        res.render('create', { title: 'Create Listing' });
     },
     async post(req, res) {
         const car = {
@@ -13,13 +12,12 @@ module.exports = {
             owner: req.session.user.id
         };
         try {
-            await req.storage.createCar(car)
-            res.redirect('/')
+            await req.storage.createCar(car);
+            res.redirect('/');
         } catch (err) {
             console.log('Error creating record');
-            res.locals.errors = mapError(err)
-            res.render('create', {title: "Create Listing"});
+            res.locals.errors = mapError(err);
+            res.render('create', { title: 'Create Listing' });
         }
-
     }
 };

@@ -1,6 +1,6 @@
 module.exports = {
     get(req, res) {
-        res.render('accessory', { title: "Create Accessory" })
+        res.render('accessory', { title: 'Create Accessory' });
     },
     async post(req, res) {
         const accessory = {
@@ -11,13 +11,12 @@ module.exports = {
             owner: req.session.user.id
         };
         try {
-            await req.accessory.create(accessory)
-            res.redirect('/')
+            await req.accessory.create(accessory);
+            res.redirect('/');
         } catch (err) {
             console.log('Error creating accessory');
             console.log(err.message);
-            res.redirect('/create/accessory')
+            res.redirect('/create/accessory');
         }
-
     }
 };

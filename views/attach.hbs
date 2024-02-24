@@ -1,26 +1,20 @@
 <h1>Attach an accessory</h1>
-
 <div class="form">
     <h2>{{car.name}}</h2>
     <img src="/static/images/{{car.imgUrl}}" alt="" class="cube">
     {{#if accessories}}
-    <form action="/attach/{{car.id}}" method="post">
-        <label for="accessory">Accessories</label>
-        <select name="accessory" id="accessory">
-            {{#each accessories}}
-                <option value="{{id}}">{{name}}</option>
-            {{/each}} 
-
-
-        </select>
-        <input type="submit" value="Attach">
-    </form>
+        <form action="/attach/{{car.id}}" method="post">
+            <label for="accessory">Accessories</label>
+            <select name="accessory" id="accessory">
+                {{#each accessories}}
+                    <option value="{{id}}">{{name}}</option>
+                {{/each}}
+            </select>
+            <input type="submit" value="Attach">
+        </form>
     {{else}}
-    <h3 class="italic">There are no accessories.  </h3>
-        <a href="/create/accessory" class="italic" style="color: black;">Add the first one</a> 
- 
-    
+        <h3 class="italic">There are no accessories. </h3>
+        <a href="/create/accessory" class="italic" style="color: black;">Add the first one</a>
     {{/if}}
     <a href="/details/{{car.id}}" class="btn">Back</a>
 </div>
-
