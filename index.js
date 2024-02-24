@@ -60,7 +60,7 @@ const deleteCar = require('./controllers/delete');
 const edit = require('./controllers/edit');
 const accessory = require('./controllers/accessory');
 const attach = require('./controllers/attach');
-const {registerGet, registerPost, loginGet, loginPost,logout} = require('./controllers/auth')
+const authController = require('./controllers/auth');
 
 const { notFound } = require('./controllers/notFound');
 const { isLoggedIn } = require('./services/util');
@@ -115,15 +115,7 @@ async function start() {
         .get(isLoggedIn(), edit.get)
         .post(isLoggedIn(), edit.post);
 
-    app.route('/register')
-        .get(registerGet)
-        .post(registerPost);
-
-    app.route('/login')
-        .get(loginGet)
-        .post(loginPost);
-
-    app.get('/logout', logout)
+    app.use(authController)
 
     app.all('*', notFound);
 
