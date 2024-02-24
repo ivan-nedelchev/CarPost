@@ -2,6 +2,12 @@ module.exports = {
     async get(req, res) {
         let id = req.params.id;
         let car = await req.storage.getById(id);
+
+        if(car.owner != req.session.user.id) {
+            console.log('User is not owner!');
+            return res.redirect('/login')
+        }
+
         if(car) {
             res.render('edit', {title : `Edit Listing - ${car.name}`, car});
         } else {
@@ -15,10 +21,16 @@ module.exports = {
             description : req.body.description,
             imgUrl : req.body.imageUrl,
             price : Number(req.body.price)
-        }
+        };
+
+      
+
         try {
-            await req.storage.updateById(id, car)
-            res.redirect('/');
+            if(await req.storage.updateById(id, car, req.session.user.id)) {
+                res.redirect('/');
+            } else {
+                res.redirect('/login');
+            }
         } catch (err) {
             res.redirect('/404');
         }

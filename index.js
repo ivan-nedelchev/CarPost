@@ -16,7 +16,7 @@
 // - [x] register service
 // - [x] login service
 // - [x] logout service
-// - [] add authorization checks to data modification
+// - [x] add authorization checks to data modification
 
 //implement controllers
 // - [x] home (catalog)
@@ -30,7 +30,8 @@
 // - [X] attach accessory to car
 // - [X] update details to include accessory
 // - [x] auth controller with login, register, logout actions
-// - [ ] protect routes
+// - [x] protect routes
+// - [x] only show edit buttons for record owner
 // - [x] add front-end code
 // - [X] add database connection
 // - [X] create Car model
@@ -39,7 +40,7 @@
 // - [X] create Accessory model
 // - [x] add session middleware and auth libraries
 // - [X] create User model
-// - [] add owner property to Car, Accessory models
+// - [x] add owner property to Car, Accessory models
 
 const express = require('express');
 const hbs = require('express-handlebars');
