@@ -156,6 +156,7 @@ form label {
     padding: 12px;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+    display: block;
 }
 
 input[type=text],

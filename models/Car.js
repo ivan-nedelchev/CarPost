@@ -5,7 +5,8 @@ const carSchema = new Schema({
     description : {type: String, default: ''},
     imgUrl : {type: String, default: 'notFound.jpg'},
     price : {type: Number,  required : true, min: 0},
-    accessories: {type: [ObjectID], default : [], ref: "Accessory"}
+    accessories: {type: [ObjectID], default : [], ref: "Accessory"},
+    isDeleted: {type: Boolean, default: false}
 });
 
 const Car = model('Car', carSchema);
