@@ -4,8 +4,7 @@ module.exports = {
         res.render('index', {
             cars,
             title: 'CarPost',
-            query: req.query,
-            errors: [{ msg: 'text error' }]
+            query: req.query
         });
     }
 };

@@ -1,0 +1,19 @@
+                                    SPA using REACT with REST API ( mobile.bg copy ) 
+<MAIN structure>
+    [] => Init React Router
+    [] => Create views (register, login, logout, home, car details, edit, )
+    [] => Components
+</MAIN structure>
+
+[] => 
+[] => 
+[] => 
+[] => 
+[] => 
+[] => 
+[] => 
+[] => 
+[] => 
+[] => 
+[] => 
+[] => 
