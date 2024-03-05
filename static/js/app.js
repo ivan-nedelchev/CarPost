@@ -1,12 +1,14 @@
-document.getElementById('cars').addEventListener('click', ({ target }) => {
-    if (target.classList.contains('more')) {
-        const desc = target.parentElement.querySelector('.description');
-        if (desc.style.display == 'block') {
-            desc.style.display = 'none';
-            target.textContent = 'Show more';
-        } else {
-            target.textContent = 'Hide';
-            desc.style.display = 'block';
+document
+    .getElementById('cars')
+    .addEventListener('click', (e) => {
+        if (e.target.classList.contains('more')) {
+            const description = e.target.parentElement.querySelector('.description');
+            if (description.style.display === 'block') {
+                description.style.display = 'none';
+                e.target.textContent = 'Show description';
+            } else {
+                e.target.textContent = 'Hide description';
+                description.style.display = 'block';
+            }
         }
-    }
-});
+    });
